@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="ModJaxx">
+<head>
+	<title>AJAX</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+<!-- <script type="text/javascript" src="http://localhost:3000/js/main.js"></script> -->
+<!-- technically, we're telling it to go here ^^ but you can write it like the one below BECAUSE it's a local host -->
+	<script type="text/javascript" src="main.js"></script>
+	
+</head>
+
+<body ng-controller='controlJaxx'>
+	<h1>{{greeting}}</h1>
+
+	<form ng-submit="makeMeASandwich()">
+		<input ng-model="newSandwich.name" placeholder="Name"></input>
+		<input ng-model="newSandwich.bread" placeholder="Bread"></input>
+		<input ng-model="newSandwich.toppings" placeholder="Toppings"></input>
+		<input type="submit"></input>
+	</form>
+
+	<div ng-show="!sandwiches[0].name">{{sandwichLoader}}</div>
+
+	<div ng-repeat="sandwich in sandwiches">
+		<h1>{{sandwich.name}} on {{sandwich.bread}}</h1>
+		<ul>
+			<li ng-repeat="topping in sandwich.toppings"> {{topping}} </li>
+		</ul>
+	</div>
+
+</body>
+</html>

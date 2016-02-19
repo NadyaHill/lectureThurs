@@ -1,0 +1,4 @@
+./ == whereever you're running the node or nodemon from 
+./ == DIR name
+
+when you're requiring a file, ./ refers to where that file lives (inconsistancy!!)
